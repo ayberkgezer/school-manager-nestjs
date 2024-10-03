@@ -1,4 +1,4 @@
-import { Controller, Get, NotFoundException } from '@nestjs/common';
+import { Controller, Get } from '@nestjs/common';
 import { AppService } from './app.service';
 import { BaseResponse } from './_base/base.response';
 import { ResponseMessages } from './_common/enums/ResponseMessages.enum';
@@ -10,7 +10,6 @@ export class AppController {
   @Get()
   getHello() {
     const user = { id: 2, name: 'John Doe' };
-    throw new NotFoundException();
     return new BaseResponse(user, ResponseMessages.SUCCESS, true);
   }
 }
